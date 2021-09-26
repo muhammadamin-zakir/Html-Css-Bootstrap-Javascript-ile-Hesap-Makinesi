@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, red, blue, red) !important;
+}
+
+h1 {
+    width: 240px;
+    word-wrap: normal;
+    /* taşan yazıyı alt satıra geçirme (width olmak zorunda)*/
+    color: white;
+}
+
+.side-top {
+    background: black;
+    width: 240px;
+    height: 100px;
+    border: 1px solid black;
+    border-bottom: 1px solid #313131;
+    text-align: end;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 30px;
+    font-size: 1.5rem;
+    color: rgb(238, 144, 50);
+    overflow: hidden;
+    
+
+}
+
+.lines {
+    display: flex;
+}
+
+.button {
+    display: grid;
+    width: 60px;
+    height: 60px;
+    place-items: center;
+    border: 1px solid black;
+    background: #1F1702;
+    color: whitesmoke;
+}
+
+.clear,
+.equal {
+    width: 120px;
+    color: #33D6D7;
+}
+
+.equal {
+    background: rgb(254, 134, 12);
+    color: black;
+
+}
+
+.percent,
+.divide,
+.minus,
+.plus,
+.times {
+    color: rgb(255, 195, 12);
+}
+
+.button:hover {
+    background: #191200;
+}
+
+.equal:hover {
+    background: #CD6C0B;
+}
+
+.button:active {
+    background: #110d00;
+    color: rgb(255, 195, 12);
+}
+
+.equal:active {
+    background: #995109;
+    color: black;
+}
