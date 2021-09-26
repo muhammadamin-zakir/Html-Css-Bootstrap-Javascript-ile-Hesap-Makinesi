@@ -1,4 +1,4 @@
-# HTML-CSS-BOOTSTRAP-JAVASCRIPT-HESAP-MAKINESI
+# Html,Css,Bootstrap,Javascript ile Hesap Makinesi
 Tam bir oyuncu hesap makinesi (renkli menkli (: ) 
 
 <img src="https://github.com/perseusp3/HTML-CSS-BOOTSTRAP-JAVASCRIPT-HESAP-MAKINESI/blob/master/image/tamekran.PNG" height="280"><br>
