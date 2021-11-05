@@ -20,15 +20,15 @@ const equalButton = document.querySelector(".equal");
 
 addEventListeners();
 
-function addEventListeners(){
+function addEventListeners() {
     clickButtons();
 }
 
 // https://stackoverflow.com/questions/49680484/how-to-add-one-event-listener-for-all-buttons
 
-function clickButtons(){
-    allButtons.forEach(function(currentBtn){
-        currentBtn.addEventListener("click", function(){
+function clickButtons() {
+    allButtons.forEach(function (currentBtn) {
+        currentBtn.addEventListener("click", function () {
             const value = currentBtn;
             takeValueFromButtons(value);
         });
@@ -37,47 +37,48 @@ function clickButtons(){
 
 
 let operatorsCheck = true;
-function takeValueFromButtons(value){
+function takeValueFromButtons(value) {
 
-    if(value.className === "button clear"){
+    if (value.className === "button clear") {
         clearScreen();
     }
 
-    if(value.className === "button equal"){
+    if (value.className === "button equal") {
         var ourInput = sideTopInput.innerHTML;
-        var lastCharacter = ourInput[ourInput.length-1];
+        var lastCharacter = ourInput[ourInput.length - 1];
 
-        if(lastCharacter === "." || lastCharacter === "%" || 
-           lastCharacter === "÷" || lastCharacter === "x" || 
-           lastCharacter === "-" || lastCharacter === "+"){
+        if (lastCharacter === "." || lastCharacter === "%" ||
+            lastCharacter === "÷" || lastCharacter === "x" ||
+            lastCharacter === "-" || lastCharacter === "+") {
+
+            // /.$/ işareti son karakteri seçer. yani burada son karakterimiz yukardakilerden birisi ise sil demek istedik.
             sideTopInput.innerHTML = sideTopInput.innerHTML.replace(/.$/, '');
         }
 
 
-         sideTopInput.innerHTML = sideTopInput.innerHTML.replace(/x/g, '*').replace(/÷/g, '/');
-         sideTopInput.innerHTML = eval(sideTopInput.innerHTML);
-        
-        
+        //x global olarak aranır ve replace() methodu ile x yerne * yazılır.
+        sideTopInput.innerHTML = sideTopInput.innerHTML.replace(/x/g, '*').replace(/÷/g, '/');
+        sideTopInput.innerHTML = eval(sideTopInput.innerHTML);
     }
 
-    if((value.className ==="button percent" || value.className ==="button divide" || 
-    value.className ==="button times" || value.className ==="button plus"|| value.className ==="button minus"
-    || value.className ==="button dot") && operatorsCheck){
-        
+    if ((value.className === "button percent" || value.className === "button divide" ||
+        value.className === "button times" || value.className === "button plus" || value.className === "button minus"
+        || value.className === "button dot") && operatorsCheck) {
+
         sideTopInput.innerHTML = sideTopInput.innerHTML.concat(value.textContent);
         operatorsCheck = false;
     }
 
-    if(value.className ==="button"){
-        writeOnScreen(value); 
+    if (value.className === "button") {
+        writeOnScreen(value);
     }
 }
 
-function writeOnScreen(value){
-    if(sideTopInput.textContent === ""){
+function writeOnScreen(value) {
+    if (sideTopInput.textContent === "") {
         sideTopInput.innerHTML = value.textContent;
     }
-    else{
+    else {
         sideTopInput.innerHTML = sideTopInput.innerHTML.concat(value.textContent);
 
         //buraya bekli 232,231 gibi virgül ekleyebilirsin!
@@ -85,7 +86,7 @@ function writeOnScreen(value){
     operatorsCheck = true;
 }
 
-function clearScreen(){
+function clearScreen() {
     sideTopInput.textContent = "";
 }
 
